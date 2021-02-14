@@ -1,0 +1,52 @@
+body {
+  margin: 0px;
+  background-color: cadetblue;
+}
+
+.nav-wr {
+  display: flex;
+  justify-content: space-between;
+}
+.left-side {
+  display: flex;
+}
+
+.right-side {
+  display: flex;
+  padding: 22px;
+}
+.nav-wr > .right-side > div {
+  margin-right: 20px;
+  font-size: small;
+  text-transform: uppercase;
+}
+
+.nav-wr > .left-side > div {
+  margin-right: 20px;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-top: 5px;
+  padding-left: 22px;
+  
+}
+.nav-text a{
+    text-decoration: none;
+    color: black;
+}
+.nav-link-wr {
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+.nav-link-wr a {
+  color:cornsilk;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+.nav-link-wr:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav-link-wr a:hover {
+  color: black;
+}
