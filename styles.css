@@ -50,3 +50,20 @@ body {
 .nav-link-wr a:hover {
   color: black;
 }
+.content-wr{
+    padding-left: 40px;
+    display: flex;
+  justify-content: space-between;
+}
+
+.content-left{
+    width: 350px;
+    padding: 38px;
+    margin-left: 40px;
+}
+
+.content-right{
+   margin-left: 50px;
+   margin-right: auto;
+   margin-top: 50px;
+}
