@@ -57,13 +57,20 @@ body {
 }
 
 .content-left{
+  margin-top: 40px;
     width: 350px;
     padding: 38px;
     margin-left: 40px;
+    font-size: large;
 }
 
 .content-right{
    margin-left: 50px;
    margin-right: auto;
    margin-top: 50px;
+}
+
+.video-wr{
+
+  margin-left: 100px;
 }
