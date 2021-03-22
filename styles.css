@@ -27,11 +27,10 @@ body {
   font-weight: bolder;
   padding-top: 5px;
   padding-left: 22px;
-  
 }
-.nav-text a{
-    text-decoration: none;
-    color: black;
+.nav-text a {
+  text-decoration: none;
+  color: black;
 }
 .nav-link-wr {
   height: 22px;
@@ -39,7 +38,7 @@ body {
   transition: border-bottom 0.5s;
 }
 .nav-link-wr a {
-  color:cornsilk;
+  color: cornsilk;
   text-decoration: none;
   transition: color 0.5s;
 }
@@ -50,27 +49,42 @@ body {
 .nav-link-wr a:hover {
   color: black;
 }
-.content-wr{
-    padding-left: 40px;
-    display: flex;
+.content-wr {
+  padding-left: 40px;
+  display: flex;
   justify-content: space-between;
 }
 
-.content-left{
+.content-left {
   margin-top: 40px;
-    width: 350px;
-    padding: 38px;
-    margin-left: 40px;
-    font-size: large;
+  width: 25%;
+  padding: 38px;
+  margin-left: 40px;
+  font-size: large;
 }
 
-.content-right{
-   margin-left: 50px;
-   margin-right: auto;
-   margin-top: 50px;
+.content-right {
+  width: 75%;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
 }
-
-.video-wr{
-
+.video-container{
+  width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+}
+.videoInsert {
+  
+  width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.video-wr {
+ 
   margin-left: 100px;
+  padding-bottom: 50px;
 }
