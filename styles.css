@@ -56,17 +56,20 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
+.content-text {
+  padding-top: 50px;
+  font-size: medium;
+}
 .content-left {
   margin-top: 40px;
-  width: 25%;
+  width: 35%;
   padding: 38px;
   margin-left: 40px;
   font-size: x-large;
 }
 
 .content-right {
-  width: 75%;
+  width: 65%;
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 50px;
