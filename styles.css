@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   background-color: cadetblue;
+  font-family: arial;
 }
 
 .nav-wr {
@@ -58,6 +59,7 @@ body {
 }
 .content-text {
   padding-top: 50px;
+  line-height: 1.5;
   font-size: medium;
 }
 .content-left {
