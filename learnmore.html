@@ -2,77 +2,87 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Learn More</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <title>Demyelination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="demyelination animation simple.js"></script>
-<script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-function init() {
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("8B3BCE2107AF4347A599D1C3FC531879");
-	var lib=comp.getLibrary();
-	var loader = new createjs.LoadQueue(false);
-	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-	var lib=comp.getLibrary();
-	loader.loadManifest(lib.properties.manifest);
-}
-function handleFileLoad(evt, comp) {
-	var images=comp.getImages();	
-	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-}
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	var queue = evt.target;
-	var ssMetadata = lib.ssMetadata;
-	for(i=0; i<ssMetadata.length; i++) {
-		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-	}
-	exportRoot = new lib.demyelinationanimationsimple();
-	stage = new lib.Stage(canvas);	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.framerate = lib.properties.fps;
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
-}
-</script>
+    <script src="demyelination animation simple.js"></script>
+    <script>
+      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+      function init() {
+        canvas = document.getElementById("canvas");
+        anim_container = document.getElementById("animation_container");
+        dom_overlay_container = document.getElementById("dom_overlay_container");
+        var comp = AdobeAn.getComposition("8B3BCE2107AF4347A599D1C3FC531879");
+        var lib = comp.getLibrary();
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", function (evt) {
+          handleFileLoad(evt, comp);
+        });
+        loader.addEventListener("complete", function (evt) {
+          handleComplete(evt, comp);
+        });
+        var lib = comp.getLibrary();
+        loader.loadManifest(lib.properties.manifest);
+      }
+      function handleFileLoad(evt, comp) {
+        var images = comp.getImages();
+        if (evt && evt.item.type == "image") {
+          images[evt.item.id] = evt.result;
+        }
+      }
+      function handleComplete(evt, comp) {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        var lib = comp.getLibrary();
+        var ss = comp.getSpriteSheet();
+        var queue = evt.target;
+        var ssMetadata = lib.ssMetadata;
+        for (i = 0; i < ssMetadata.length; i++) {
+          ss[ssMetadata[i].name] = new createjs.SpriteSheet({ images: [queue.getResult(ssMetadata[i].name)], frames: ssMetadata[i].frames });
+        }
+        exportRoot = new lib.demyelinationanimationsimple();
+        stage = new lib.Stage(canvas);
+        //Registers the "tick" event listener.
+        fnStartAnimation = function () {
+          stage.addChild(exportRoot);
+          createjs.Ticker.framerate = lib.properties.fps;
+          createjs.Ticker.addEventListener("tick", stage);
+        };
+        //Code to support hidpi screens and responsive scaling.
+        AdobeAn.makeResponsive(false, "both", false, 1, [canvas, anim_container, dom_overlay_container]);
+        AdobeAn.compositionLoaded(lib.properties.id);
+        fnStartAnimation();
+      }
+    </script>
   </head>
   <body onload="init();">
-    <div class="nav-wr">
-      <div class="left-side">
-        <div id="animation_container" style="background-color: rgba(95, 158, 160, 1); width: 80px; height: 60px">
-          <canvas id="canvas" width="80" height="60" style="position: absolute; display: block; background-color: rgba(95, 158, 160, 1)"></canvas>
-          <div
-            id="dom_overlay_container"
-            style="pointer-events: none; overflow: hidden; width: 80px; height: 60px; position: absolute; left: 0px; top: 0px; display: block"
-          ></div>
-        </div>
-        <div class="nav-text">
-          <a href="index.html">Demyelination</a>
-        </div>
-      </div>
-      <div class="right-side">
-        <div class="nav-link-wr">
-          <a href="index.html">Home</a>
-        </div>
-        <div class="nav-link-wr">
-          <a href="learnmore.html">Learn More</a>
-        </div>
-      </div>
-    </div>
+   <div class="container">
+      <div class="nav-wr">
+        <div class="left-side">
+          <div id="animation_container" style="background-color: rgba(154, 213, 230, 1); width: 80px; height: 60px">
+            <canvas id="canvas" width="80" height="60" style="position: absolute; display: block; background-color: rgba(154, 213, 230, 1)"></canvas>
+            <div
+              id="dom_overlay_container"
+              style="pointer-events: none; overflow: hidden; width: 80px; height: 60px; position: absolute; left: 0px; top: 0px; display: block"
+            ></div>
+          </div>
 
-    <div class="learn-more-content">
+          <div class="nav-text">
+            <a href="index.html">Demyelination</a>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="nav-link-wr">
+            <a href="index.html">Home</a>
+          </div>
+         
+        </div>
+      </div>
+
+    <div class="learnmore-content-wr">
       <div class="learn-more-heading">
         <h2>Follow links below to learn more about Demyelination</h2>
       </div>
