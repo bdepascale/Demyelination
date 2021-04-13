@@ -5,6 +5,6 @@ Delmyelination animation page for An Animated Discovery OF Neuroscience
 ### Program Execution
 download folder and run index.html
 
-##Author
+## Author
 Brian DePascale
 bdepascale@gmail.com
